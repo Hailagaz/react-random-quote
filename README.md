@@ -1,3 +1,3 @@
 # react-random-quote
 
-"Build a Random Quote Machine" project for "Front End Development Libraries" certification
+"Build a Random Quote Machine" project for "Front End Development Libraries" certification by @freeCodeCamp
