@@ -17,7 +17,7 @@ function App() {
 
 	useEffect(() => {
 		fetchRandomQuote();
-	}, []);
+	}, [fetchRandomQuote]);
 
 	return (
 		<div className="container">
