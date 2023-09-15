@@ -67,7 +67,7 @@ function App() {
 
 	const fetchRandomQuote = async () => {
 		try {
-			const response = await fetch('/quotes.json');
+			const response = await fetch(process.env.PUBLIC_URL + '/quotes.json');
 
 			if (!response.ok) {
 				throw new Error('Network response was not ok');
