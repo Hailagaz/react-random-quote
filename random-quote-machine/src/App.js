@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setQuote } from './quoteSlice';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 function App() {
 	const quote = useSelector((state) => state.quote);
@@ -17,17 +20,41 @@ function App() {
 
 	useEffect(() => {
 		fetchRandomQuote();
-	}, [fetchRandomQuote]);
+	}, []);
 
 	return (
-		<div className="container">
+		<Container
+			maxWidth="sm"
+			sx={{
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center',
+				minHeight: '100vh',
+				backgroundColor: 'rgba(255, 255, 255, 0.9)', // Background with opacity
+				backdropFilter: 'blur(10px)', // Add a blur effect to the background
+				borderRadius: '10px', // Rounded corners for the "card"
+				boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', // Box shadow for the "card"
+			}}
+		>
 			<div id="quote-box">
-				<h1>Random Quote Machine</h1>
-				<p id="text">{quote.text}</p>
-				<p id="author">- {quote.author}</p>
-				<button id="new-quote" onClick={fetchRandomQuote}>
+				<Typography variant="h4" gutterBottom>
+					Random Quote Machine
+				</Typography>
+				<Typography id="text" variant="body1" gutterBottom>
+					{quote.text}
+				</Typography>
+				<Typography id="author" variant="body2">
+					- {quote.author}
+				</Typography>
+				<Button
+					id="new-quote"
+					variant="contained"
+					color="primary"
+					onClick={fetchRandomQuote}
+					sx={{ marginTop: 2 }}
+				>
 					New Quote
-				</button>
+				</Button>
 				<a
 					id="tweet-quote"
 					href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -35,11 +62,18 @@ function App() {
 					)}`}
 					target="_blank"
 					rel="noopener noreferrer"
+					style={{ textDecoration: 'none' }}
 				>
-					Tweet Quote
+					<Button
+						variant="outlined"
+						color="primary"
+						sx={{ marginLeft: 1 }}
+					>
+						Tweet Quote
+					</Button>
 				</a>
 			</div>
-		</div>
+		</Container>
 	);
 }
 

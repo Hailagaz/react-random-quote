@@ -1,20 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
-
 body {
 	background-color: #f8f9fa;
-}
-
-.container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-}
-
-#quote-box {
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-	text-align: center;
+	margin: 0;
 }
