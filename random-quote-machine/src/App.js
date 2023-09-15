@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import BackgroundSlider from 'react-background-slider';
 
 function QuoteCard({ quote, fetchRandomQuote }) {
 	return (
@@ -76,6 +77,14 @@ function App() {
 		fetchRandomQuote();
 	}, []);
 
+	const images = [
+		'https://images-assets.nasa.gov/image/PIA12348/PIA12348~medium.jpg',
+		'https://images-assets.nasa.gov/image/PIA15416/PIA15416~medium.jpg',
+		'https://images-assets.nasa.gov/image/0302063/0302063~medium.jpg',
+		'https://images-assets.nasa.gov/image/PIA03606/PIA03606~medium.jpg',
+		'https://images-assets.nasa.gov/image/PIA03096/PIA03096~medium.jpg',
+	];
+
 	return (
 		<div
 			style={{
@@ -83,12 +92,12 @@ function App() {
 				flexDirection: 'column',
 				alignItems: 'center',
 				minHeight: '100vh',
-				paddingTop: '200px', // Adjust this value for the desired spacing
+				paddingTop: '200px',
 			}}
 		>
-			<Typography variant="h4" gutterBottom style={{
-				textAlign: 'center',
-			}}>
+			{/* Add BackgroundSlider component for animated background */}
+			<BackgroundSlider images={images} duration={5} transition={2} />
+			<Typography variant="h4" gutterBottom>
 				Random Quote Machine
 			</Typography>
 			<QuoteCard quote={quote} fetchRandomQuote={fetchRandomQuote} />
