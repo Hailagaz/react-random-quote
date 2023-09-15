@@ -4,6 +4,60 @@ import { setQuote } from './quoteSlice';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+
+function QuoteCard({ quote, fetchRandomQuote }) {
+	return (
+		<Container
+			maxWidth="sm"
+			sx={{
+				backgroundColor: 'rgba(255, 255, 255, 0.9)',
+				backdropFilter: 'blur(10px)',
+				borderRadius: '10px',
+				boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
+				padding: '20px',
+			}}
+		>
+			<div id="quote-box">
+				<Typography variant="body1" gutterBottom>
+					{quote.text}
+				</Typography>
+				<Typography variant="body2">
+					- {quote.author}
+				</Typography>
+				<Box
+					sx={{
+						display: 'flex',
+						justifyContent: 'space-between',
+						marginTop: 2,
+					}}
+				>
+					<Button
+						id="new-quote"
+						variant="contained"
+						color="primary"
+						onClick={fetchRandomQuote}
+					>
+						New Quote
+					</Button>
+					<a
+						id="tweet-quote"
+						href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+							`${quote.text} - ${quote.author}`
+						)}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						style={{ textDecoration: 'none' }}
+					>
+						<Button variant="outlined" color="primary">
+							Tweet Quote
+						</Button>
+					</a>
+				</Box>
+			</div>
+		</Container>
+	);
+}
 
 function App() {
 	const quote = useSelector((state) => state.quote);
@@ -23,57 +77,22 @@ function App() {
 	}, []);
 
 	return (
-		<Container
-			maxWidth="sm"
-			sx={{
+		<div
+			style={{
 				display: 'flex',
-				justifyContent: 'center',
+				flexDirection: 'column',
 				alignItems: 'center',
 				minHeight: '100vh',
-				backgroundColor: 'rgba(255, 255, 255, 0.9)', // Background with opacity
-				backdropFilter: 'blur(10px)', // Add a blur effect to the background
-				borderRadius: '10px', // Rounded corners for the "card"
-				boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', // Box shadow for the "card"
+				paddingTop: '200px', // Adjust this value for the desired spacing
 			}}
 		>
-			<div id="quote-box">
-				<Typography variant="h4" gutterBottom>
-					Random Quote Machine
-				</Typography>
-				<Typography id="text" variant="body1" gutterBottom>
-					{quote.text}
-				</Typography>
-				<Typography id="author" variant="body2">
-					- {quote.author}
-				</Typography>
-				<Button
-					id="new-quote"
-					variant="contained"
-					color="primary"
-					onClick={fetchRandomQuote}
-					sx={{ marginTop: 2 }}
-				>
-					New Quote
-				</Button>
-				<a
-					id="tweet-quote"
-					href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-						`${quote.text} - ${quote.author}`
-					)}`}
-					target="_blank"
-					rel="noopener noreferrer"
-					style={{ textDecoration: 'none' }}
-				>
-					<Button
-						variant="outlined"
-						color="primary"
-						sx={{ marginLeft: 1 }}
-					>
-						Tweet Quote
-					</Button>
-				</a>
-			</div>
-		</Container>
+			<Typography variant="h4" gutterBottom style={{
+				textAlign: 'center',
+			}}>
+				Random Quote Machine
+			</Typography>
+			<QuoteCard quote={quote} fetchRandomQuote={fetchRandomQuote} />
+		</div>
 	);
 }
 
