@@ -65,13 +65,23 @@ function App() {
 	const quote = useSelector((state) => state.quote);
 	const dispatch = useDispatch();
 
-	const fetchRandomQuote = () => {
-		// Insert real API to fetch random quotes
-		const fakeQuote = {
-			text: 'This is a random quote',
-			author: 'Anonymous',
-		};
-		dispatch(setQuote(fakeQuote));
+	const fetchRandomQuote = async () => {
+		try {
+			const response = await fetch('/quotes.json');
+
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+
+			const data = await response.json();
+
+			const randomIndex = Math.floor(Math.random() * data.length);
+			const randomQuote = data[randomIndex];
+
+			dispatch(setQuote({ text: randomQuote.text, author: randomQuote.author }));
+		} catch (error) {
+			console.error('Error fetching quote:', error);
+		}
 	};
 
 	useEffect(() => {
