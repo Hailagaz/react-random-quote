@@ -2,7 +2,7 @@
 
 The Random Quote Machine is a simple web application that displays random quotes and allows users to tweet their favorite quotes.
 
-![Random Quote Machine Screenshot](screenshot.png)
+![Random Quote Machine Screenshot](react-random-quote.png)
 
 ## Table of Contents
 
