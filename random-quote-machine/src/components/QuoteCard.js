@@ -12,7 +12,7 @@ function QuoteCard({ quote }) {
 				borderRadius: '10px',
 				boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
 				padding: '20px',
-				textAlign: 'center', // Center the content
+				textAlign: 'center',
 			}}
 		>
 			<div id="quote-box">
