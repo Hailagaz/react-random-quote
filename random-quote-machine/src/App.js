@@ -47,13 +47,24 @@ function App() {
 					sx={{
 						padding: '20px',
 						textAlign: 'center',
-					}}>
+						display: 'flex',
+						justifyContent: 'space-evenly',
+						flexDirection: 'row',
+						'@media (max-width: 324px)': {
+							flexDirection: 'column',
+							alignItems: 'center',
+						},
+					}}
+				>
 					<Button
 						id="new-quote"
 						variant="contained"
 						color="primary"
 						onClick={fetchRandomQuote}
-						maxWidth="50px"
+						sx={{
+							minWidth: '150px',
+							margin: '5px',
+						}}
 					>
 						New Quote
 					</Button>
@@ -62,11 +73,15 @@ function App() {
 						variant="contained"
 						color="secondary"
 						onClick={tweetQuote}
-						maxWidth="50px"
+						sx={{
+							minWidth: '150px',
+							margin: '5px',
+						}}
 					>
 						Tweet Quote
 					</Button>
 				</Container>
+
 				<Container
 					maxWidth="sm"
 					sx={{
