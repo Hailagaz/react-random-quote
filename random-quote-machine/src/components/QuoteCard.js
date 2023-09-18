@@ -18,9 +18,9 @@ function QuoteCard({ quote }) {
 		>
 			<div id="quote-box">
 				<Typography variant="body1" gutterBottom>
-					{quote.text}
+					<q>{quote.text}</q>
 				</Typography>
-				<Typography variant="body2">- {quote.author}</Typography>
+				<Typography variant="body2" textAlign='end' paddingRight='10px'>&mdash; {quote.author}</Typography>
 			</div>
 		</Container>
 	);
