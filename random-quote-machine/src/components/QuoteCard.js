@@ -13,6 +13,7 @@ function QuoteCard({ quote }) {
 				boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
 				padding: '20px',
 				textAlign: 'center',
+				justifyItems: 'center'
 			}}
 		>
 			<div id="quote-box">
