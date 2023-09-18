@@ -24,9 +24,7 @@ function QuoteCard({ quote, fetchRandomQuote }) {
 				<Typography variant="body1" gutterBottom>
 					{quote.text}
 				</Typography>
-				<Typography variant="body2">
-					- {quote.author}
-				</Typography>
+				<Typography variant="body2">- {quote.author}</Typography>
 				<Box
 					sx={{
 						display: 'flex',
