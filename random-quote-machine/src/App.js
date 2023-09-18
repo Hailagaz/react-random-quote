@@ -4,18 +4,8 @@ import { setQuote } from './redux/quoteSlice';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ParticlesBackground from './components/Particles';
+import QuoteCard from './components/QuoteCard';
 import quotesData from './data/quotes.json';
-
-function QuoteContainer({ quote }) {
-	return (
-		<div id="quote-box">
-			<Typography variant="body1" gutterBottom>
-				{quote.text}
-			</Typography>
-			<Typography variant="body2">- {quote.author}</Typography>
-		</div>
-	);
-}
 
 function App() {
 	const quote = useSelector((state) => state.quote);
@@ -55,7 +45,7 @@ function App() {
 				>
 					New Quote
 				</Button>
-				<QuoteContainer quote={quote} />
+				<QuoteCard quote={quote} />
 			</div>
 		</div>
 	);
