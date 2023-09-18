@@ -8,10 +8,7 @@ const store = configureStore({
 		quote: quoteReducer,
 	},
 	preloadedState: {
-		quote: {
-			text: initialQuoteData[0].text,
-			author: initialQuoteData[0].author,
-		},
+		quote: initialQuoteData[0], // Initialize with the first quote
 	},
 });
 

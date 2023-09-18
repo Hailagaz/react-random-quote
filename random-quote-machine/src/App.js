@@ -24,7 +24,9 @@ function QuoteCard({ quote, fetchRandomQuote }) {
 				<Typography variant="body1" gutterBottom>
 					{quote.text}
 				</Typography>
-				<Typography variant="body2">- {quote.author}</Typography>
+				<Typography variant="body2">
+					- {quote.author}
+				</Typography>
 				<Box
 					sx={{
 						display: 'flex',
@@ -65,7 +67,7 @@ function App() {
 
 	const fetchRandomQuote = async () => {
 		try {
-			const response = await fetch(process.env.PUBLIC_URL + '/quotes.json');
+			const response = await fetch('/quotes.json');
 
 			if (!response.ok) {
 				throw new Error('Network response was not ok');
@@ -96,7 +98,6 @@ function App() {
 
 	return (
 		<div>
-			{/* Add the Particles component here */}
 			<Particles
 				id="tsparticles"
 				init={particlesInit}
