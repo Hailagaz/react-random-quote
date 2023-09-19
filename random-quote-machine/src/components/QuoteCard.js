@@ -17,10 +17,10 @@ function QuoteCard({ quote }) {
 			}}
 		>
 			<div id="quote-box">
-				<Typography variant="body1" gutterBottom>
+				<Typography variant="body1" gutterBottom id="text">
 					<q>{quote.text}</q>
 				</Typography>
-				<Typography variant="body2" textAlign='end' paddingRight='10px'>&mdash; {quote.author}</Typography>
+				<Typography variant="body2" textAlign='end' paddingRight='10px' id="author">&mdash; {quote.author}</Typography>
 			</div>
 		</Container>
 	);
