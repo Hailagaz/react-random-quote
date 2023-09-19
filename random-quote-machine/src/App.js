@@ -87,14 +87,11 @@ function App() {
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'center',
-						justifyContent: 'center',
-						backgroundColor: 'rgba(255, 255, 255, 0.5)',
-						backdropFilter: 'blur(10px)',
+						justifyContent: 'flex-start',
 						borderRadius: '10px',
-						boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
 						padding: '20px',
 						textAlign: 'center',
-						height: '200px',
+						height: '300px',
 						overflowY: 'auto',
 					}}
 				>
