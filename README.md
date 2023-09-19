@@ -64,6 +64,7 @@ Follow these instructions to get the project up and running on your local machin
 ## Built With
 
 * React - JavaScript library for building user interfaces.
+* Redux - Redux is used to manage the application's state. The state includes the currently displayed quote, which can be updated when the "New Quote" button is clicked.
 * Material-UI - React UI framework for designing responsive web applications.
 * react-tsparticles - React component for particle animations.
 * axios - Promise-based HTTP client for making API requests.
